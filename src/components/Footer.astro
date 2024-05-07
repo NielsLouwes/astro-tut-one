@@ -1,0 +1,26 @@
+---
+import Social from "./Social.astro";
+
+const platform = "github";
+const username = "nielslouwes";
+
+const capitalisedFirstLetter = (word) => {
+    const capitalFirstLetter = word.charAt(0).toUpperCase();
+    const restOfWord = word.slice(1)
+    return `${capitalFirstLetter}${restOfWord}`
+}
+---
+
+<style>
+    footer {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+
+    }
+</style>
+
+<footer>
+    <Social platform="Youtube" username="Nielslouwes" />
+    <Social platform="github" username="nielslouwes" />
+  </footer>
