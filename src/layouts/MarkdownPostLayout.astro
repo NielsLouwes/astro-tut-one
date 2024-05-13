@@ -1,0 +1,18 @@
+---
+const { frontmatter } = Astro.props;
+
+const date = new Date('2022-07-08T00:00:00.000Z')
+
+const formattedDate = date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+});
+
+---
+<h1>{frontmatter.title}</h1>
+<p>Written by {frontmatter.author}</p>
+<p>Published on {formattedDate}</p>
+<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt}>
+<slot />
+
